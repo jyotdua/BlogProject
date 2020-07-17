@@ -1,0 +1,20 @@
+{%extends "blogapp/base.html"%}
+{%block body_block%}
+<div class="jumbotron", style="text-align:center">
+    {% if registered%}
+    <h1>Thank You For Registering Now you can go to the home page and log in</h1>
+    {%else%}
+    <h1>Register Here</h1>
+    <h2>Fill out this form</h2>
+<form enctype="multipart/form-data" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    {{profile_form.as_p}}
+    <input type="submit" value="register">
+
+</form>
+    {%endif%}
+</div>
+
+
+{%endblock%}
